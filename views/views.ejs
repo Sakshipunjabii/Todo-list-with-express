@@ -35,7 +35,8 @@
     <li>
         <input type="checkbox">
         <%= task %>
-        <button type="reset" class="delete">DELETE</button><br> 
+       <!-- <button type="reset" class="delete">DELETE</button><br>-->
+       <a href="/remove-task/<%= task %>" >Delete</a>
     </li>
     <% }) %>
 </ul>

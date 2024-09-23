@@ -28,3 +28,12 @@ app.post('/todolist',(req,res)=>{
 app.listen(port,()=>{
     console.log(`Server is listening at port ${port}`);
 })
+
+
+app.get('/remove-task/:task', (req, res) => {
+  console.log(req.params.task)
+  task_obj = task_obj.filter(task => {
+          return task !== req.params.task
+  })
+  res.redirect('/todolist')
+})
