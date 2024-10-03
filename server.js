@@ -1,5 +1,6 @@
 const express=require('express');
 const path=require('path');
+const mongoose = require('mongoose');
 const app=express();
 
 app.set('view engine', 'ejs');
@@ -9,10 +10,12 @@ app.use(express.urlencoded({extended:true}));
 
 const port=8000;
 
+let db= mongoose.connect('mongodb://localhost:27017/my_db');
+
 let task_obj=[];
 
 app.get('/todolist',(req,res)=>{
-        res.render('views',{task_obj});
+        res.render('task',{task_obj});
 })
     
     

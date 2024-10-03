@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <a href="/signup">Register</a>
+        <a href="/signin">Login</a>
+    </nav>
+    <form action="" class="content" method="post">,
+        <h1>To-Do List:</h1><br><br>
+        <input type="text" name="task" placeholder="Enter To-do Task">
+        <button type="Submit" class="add">ADD</button><br>
+    
+    <ul class="list">
+        <li>
+         <input type="checkbox">
+         <label>Coding</label>
+         <a href="/remove-task/<%= task %>" >Delete</a>
+        </li>
+        
+        <li>
+         <input type="checkbox">
+         <label>Workout</label>
+         <a href="/remove-task/<%= task %>" >Delete</a>
+        </li>
+
+        <li>
+         <input type="checkbox">
+         <label>Sleeping</label>
+         <a href="/remove-task/<%= task %>" >Delete</a>
+        </li>
+
+        <% task_obj.forEach((task)=>{ %>
+         <li>
+          <input type="checkbox">
+          <%= task %>
+          <a href="/remove-task/<%= task %>" >Delete</a>
+         </li>
+        <% }) %>
+    </ul>
+    </form>
+</body>
+</html>
